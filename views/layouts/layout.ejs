@@ -9,8 +9,28 @@
     <!-- font Awesome -->
     <link defer='defer' href='https://kit-pro.fontawesome.com/releases/latest/css/pro.min.css' rel='stylesheet'/>
     <link defer='defer' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'/>
+    <link href="./public/css/style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
- <%- body %>
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo"><a href="/"><img src="./public/img/logo.png"></a></div>
+                <nav>
+                    <ul>
+                        <li><a href="/">Home</li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Contact</a></li>
+                        <li><a href="">Products</a></li>
+                        <li><a href="/register">Account</a></li>
+                        <li><form id="logOutBtn" action="/logout?_method=DELETE" method="POST"><a href="#" onclick="document.getElementById('logOutBtn').submit();"> LogOut </a></form></li>
+                        <li><div class="fad fa-shopping-cart"><span class="cart-nm">1</span></div></li>
+                    </ul>
+                </nav>   
+            </div>
+            <div class="clear:both"></div>
+            <%- body %>
+        </div>
+    </div>
 </body>
 </html>

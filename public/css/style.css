@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+.header{
+    background: radial-gradient(#ffffff, #aaaaaa);
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+nav{
+    text-align: right;
+    flex: 1;
+}
+nav ul{
+    display: inline-block;
+    list-style-type: none;
+}
+nav ul li{
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    cursor: pointer;
+}
+div{clear: both;}
+a{
+    text-decoration: none;
+    color: #555555;
+}
+a:hover{
+    color: #111111;
+    cursor: pointer;
+}
+p{
+    font-size: 20px;
+    color: #444444;
+}
+.container{
+    max-width: 1300px;
+    margin: auto;
+    padding: 0 25px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.col-1{
+    flex-basis: 50%;
+    min-width: 300px;
+}
+.col-1 img{
+    max-width: 100%;
+    float: left;
+}
+.col-1 h1{
+    font-size: 50px;
+    margin: 0 20px;
+    color: #333333;
+}
+.col-1 p{
+    margin: 0 20px;
+}
+.btn{
+    display: inline-block;
+    background: transparent;
+    padding: 10px 20px;
+    border: 2px solid #333333;
+    margin: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn:hover{
+    background: #333333;
+    color: #ffffff;
+}
+
+.btn::after{
+    content:'\22D9';
+    float: right;
+}
+.row{
+    margin-top: 50px;
+}
+.logo{width: 250px;height: auto;}
+.logo img{width: 100%;height: auto;}
+.cart-nm{padding: 2px 5px; background: #c23232; border-radius: 20px; border: 1px solid #a01515; font-size: 10px; color: #fff; display: flex; position: absolute; left: 10px; bottom: 10px;}
+/* ---- Login Form --- */
+.login-box{
+    background: linear-gradient(45deg, white, #b1680e26);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-top: 3px solid #ffb100;
+    border-bottom: 3px solid #ffb100;
+    padding: 30px;
+}
+.login-box h1{font-size: 30px;color: #ffb100;border-bottom: 1px solid #ffb100;margin-bottom: 30px;display: inline-flex;}
+.form-box{width: 300px;overflow: hidden;}
+.form-box::before{width: 1px;background: #eeeeee;}
+.form-in{
+    width: 100%;
+    height: 40px;
+    position: relative;
+    margin-bottom: 20px;
+}
+.form-in input{border: none;outline: none;background: none;width: 100%;height: 100%;padding-top: 20px;color: #555555;}
+.form-in label{position: absolute;bottom: 0;left: 0;width: 100%;height: 100%;pointer-events: none;border-bottom: 1px solid #333333;}
+.form-in label::after{content: '';position: absolute;bottom: -1px;left: 0;;width: 100%;height: 100%;border-bottom: 3px solid #ffb100;
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+}
+.content-dt{position: absolute;bottom: 5px;left: 0px;transition: all 0.3s ease;}
+.form-in input:focus + .label-name .content-dt, .form-in input:valid + .label-name .content-dt {
+    transform: translateY(-100%);
+    font-size: 12px;
+    color: #ffb100;
+}
+.form-in input:focus + label::after, .form-in input:valid + label::after{
+    transform: translateX(0);
+}
+.acc-pag{width: 100%;margin-top: 20px;position: relative;text-align: center;}
+.acc-pag::before{content: '';position: absolute;top: 0;left: 50%;width: 90%;height: 1px;background: #cccccc;
+    transform: translateY(-100%);
+    transition: all 0.3s ease;transform: translate(-50%,0);}
+    .acc-pag p{font-size: 15px;padding: 5px;}
+/* ---- Button --- */ 
+button{cursor: pointer;background: none;font-size: 18px;font-weight: 600;text-align:center;color: #ffb100;border:1px solid #ffb100;width: 90%;height: 40px;outline: none;position: relative;left: 50%;transform: translate(-50%,0);}
+button::after{
+    content:'\22D9';
+}
+button:hover{background: #ffb100;color: #fff;transition: 0.2s ease;outline: 3px solid #f0740046;}
+button:active{background: #ffb30070;color: #ffffff;}
