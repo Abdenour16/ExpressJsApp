@@ -140,3 +140,4 @@ button::after{
 }
 button:hover{background: #ffb100;color: #fff;transition: 0.2s ease;outline: 3px solid #f0740046;}
 button:active{background: #ffb30070;color: #ffffff;}
+.error{padding: 5px 10px; border: 1px solid #f34c4c;background: #f34c4c93;font-family: sans-serif;color: #fff;text-align: center;margin-bottom: 20px;}
