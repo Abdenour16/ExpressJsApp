@@ -15,12 +15,6 @@ const authorRouter = require('./routes/authors')
 const registerRouter = require('./routes/register')
 const loginRouter = require('./routes/login')
 const logoutRouter = require('./routes/logout')
-
-app.use('/', indexRouter)
-app.use('/authors', authorRouter)
-app.use('/register', checkNotAuthenticated, registerRouter)
-app.use('/login', checkNotAuthenticated, loginRouter)
-app.use('/logout', checkAuthenticated, logoutRouter)
 //Set
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
@@ -38,6 +32,12 @@ app.use(passport.initialize())
 app.use(passport.session())
 app.use(express.urlencoded({ extended: false }))
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: false }))
+
+app.use('/', indexRouter)
+app.use('/authors', authorRouter)
+app.use('/register', checkNotAuthenticated, registerRouter)
+app.use('/login', checkNotAuthenticated, loginRouter)
+app.use('/logout', checkAuthenticated, logoutRouter)
 
 function checkAuthenticated(req, res, next){
     if(req.isAuthenticated()){ return next() }
