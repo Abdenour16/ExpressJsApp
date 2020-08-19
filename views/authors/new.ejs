@@ -1,1 +1,9 @@
-New author
+<div>
+<h1>New Author Here</h1>
+<%- include('../partials/AuthErrorMsg.ejs') %>
+<form action="/authors" method="POST">
+    <%- include('_form_fields') %>
+    <a class="btn" href="/authors">cancel</a>
+    <button type="submit">Create</button>
+</form>
+</div>

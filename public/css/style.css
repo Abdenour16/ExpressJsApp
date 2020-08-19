@@ -51,6 +51,9 @@ p{
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-around;
+    max-width: 1300px;
+    margin: 0 auto;
+    margin-top: 50px;
 }
 .col-1{
     flex-basis: 50%;
@@ -86,9 +89,6 @@ p{
 .btn::after{
     content:'\22D9';
     float: right;
-}
-.row{
-    margin-top: 50px;
 }
 .logo{width: 250px;height: auto;}
 .logo img{width: 100%;height: auto;}

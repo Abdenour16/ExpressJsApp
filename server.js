@@ -9,6 +9,7 @@ const expressLayouts = require('express-ejs-layouts')
 const passport = require('passport')
 const flash = require('express-flash')
 const session = require('express-session')
+const bodyParser = require('body-parser')
 // Routes
 const indexRouter = require('./routes/index')
 const authorRouter = require('./routes/authors')
@@ -30,20 +31,14 @@ app.use(session({
 }))
 app.use(passport.initialize())
 app.use(passport.session())
-
 app.use(express.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ limit: '10mb', extended: false }))
+
 app.use('/', indexRouter)
 app.use('/authors', authorRouter)
-app.use('/register', checkNotAuthenticated, registerRouter)
-app.use('/login', checkNotAuthenticated, loginRouter)
-app.use('/logout', checkAuthenticated, logoutRouter)
-
-function checkAuthenticated(req, res, next){
-    if(req.isAuthenticated()){ return next() }
-    return res.redirect('/login')}
-function checkNotAuthenticated(req, res, next) {
-    if(req.isAuthenticated()){ return res.redirect('/') }
-    next()}
+app.use('/register', registerRouter)
+app.use('/login', loginRouter)
+app.use('/logout', logoutRouter)
 
 const mongoose = require('mongoose')
 const { doesNotMatch } = require('assert')
