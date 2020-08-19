@@ -3,6 +3,7 @@ if(process.env.NODE_ENV !== 'production'){
 }
 // const & Var
 const express = require('express')
+const path = require('path')
 const app = express()
 const expressLayouts = require('express-ejs-layouts')
 const passport = require('passport')
@@ -17,7 +18,7 @@ const loginRouter = require('./routes/login')
 const logoutRouter = require('./routes/logout')
 //Set
 app.set('view engine', 'ejs')
-app.set('views', __dirname + '/views')
+app.set('views',path.join(__dirname, 'views'))
 app.set('layout', 'layouts/layout')
 //Used
 app.use(expressLayouts);
