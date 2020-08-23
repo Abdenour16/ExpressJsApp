@@ -1,11 +1,26 @@
-<h1> Search Authors </h1>
+<div class="login-box">
+    <h1> Search Authors </h1>
+    <div class="form-box">
+<%- include('../partials/AuthErrorMsg.ejs') %>
 <form action="/authors" method="GET">
-<label>Name of Author :</label>
-<input type="text" name="name" value="<%= searchOptions.name %>">
-<button type="submit">Search</button>
-</form>
-<a href="/authors/new">Creat Author</a>
-<br>
-<% authors.forEach(author => { %>
-    <div> <%= author.name %></div>
-<% }) %>
+    <div class="form-in">
+        <input type="text" name="name" value="<%= searchOptions.name %>" required/>
+        <label class="label-name" for="name"><span class="content-dt">Author Name</span></label>
+    </div>
+    <button type="submit">Search</button>
+    </form>
+    <div class="acc-pag">
+    <P>If you wont to Create Author click here !</P>
+    <a class="btn" href="/authors/new/"> Create Author </a>
+    </div>
+    <div class="acc-pag">
+        <div class="form-in">
+            <select name="name">
+        <% authors.forEach(author => { %>
+            <option selected label="<%= author.name %>" value="<%= author.name %>"></option>
+        <% }) %>   
+            </select>
+        </div>
+    </div> 
+</div>
+</div>

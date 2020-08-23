@@ -1,9 +1,14 @@
-<div>
-<h1>New Author Here</h1>
-<%- include('../partials/AuthErrorMsg.ejs') %>
+<div class="login-box">
+    <h1>New Author Here</h1>
+    <div class="form-box">
 <form action="/authors" method="POST">
     <%- include('_form_fields') %>
-    <a class="btn" href="/authors">cancel</a>
+    <%- include('../partials/AuthErrorMsg.ejs') %>
     <button type="submit">Create</button>
 </form>
+<div class="acc-pag">
+    <P>If you wont to seen Your Authors from here !</P>
+    <a class="btn" href="/authors"> My Authors </a>
+    </div>
+</div>
 </div>

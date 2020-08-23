@@ -1,0 +1,29 @@
+<div class="form-in">
+  <input type="text" name="title" value="<%= product.title %>" />
+  <label class="label-name" for="title"><span class="content-dt">Title</span></label>
+</div>
+<div class="form-in">
+  <select name="author" >
+  <% authors.forEach(author =>{ %><% if (author.id === product.author){ %>
+  <option selected label="<%= author.name %>" value="<%= author.id %>"></option>
+  <% } else {%>
+  <option selected label="<%= author.name %>" value="<%= author.id %>"></option>
+  <% } %>
+      <% }) %>
+  </select>
+</div>
+<div class="form-in">
+  <input type="number" name="price" min="0" value="<%= product.price %>" />
+  <label class="label-name" for="price"><span class="content-dt">Price</span></label>
+</div>
+<div class="form-in date">
+  <input type="date" name="publishDate" value="<%= product.publishDate == null ? '' : product.publishDate.toISOString().split('T')[0] %>" />
+  <label class="label-name" for="publishDate"><span class="content-dt">Publish Date</span></label>
+</div>
+<div class="form-in">
+  <input type="file" name="cover" />
+  <label class="label-name" for="cover"><span class="content-dt"></span></label>
+</div>
+<div class="form-in">
+  <textarea type="text" name="description" value="<%= product.description %>" ></textarea>
+</div>

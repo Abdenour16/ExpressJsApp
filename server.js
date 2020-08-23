@@ -12,10 +12,11 @@ const session = require('express-session')
 const bodyParser = require('body-parser')
 // Routes
 const indexRouter = require('./routes/index')
-const authorRouter = require('./routes/authors')
 const registerRouter = require('./routes/register')
 const loginRouter = require('./routes/login')
 const logoutRouter = require('./routes/logout')
+const authorRouter = require('./routes/authors')
+const productRouter = require('./routes/products')
 //Set
 app.set('view engine', 'ejs')
 app.set('views',path.join(__dirname, 'views'))
@@ -33,12 +34,14 @@ app.use(passport.initialize())
 app.use(passport.session())
 app.use(express.urlencoded({ extended: false }))
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: false }))
+app.use(bodyParser.json())
 
 app.use('/', indexRouter)
-app.use('/authors', authorRouter)
 app.use('/register', checkNotAuthenticated, registerRouter)
 app.use('/login', checkNotAuthenticated, loginRouter)
 app.use('/logout', checkAuthenticated, logoutRouter)
+app.use('/authors', authorRouter)
+app.use('/products', productRouter)
 
 function checkAuthenticated(req, res, next){
     if(req.isAuthenticated()){ return next() }

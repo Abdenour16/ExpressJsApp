@@ -6,13 +6,26 @@
 body{
     font-family: 'Poppins', sans-serif;
 }
+footer{width: 100%;height: auto;align-items: center;background: #333333;box-shadow: 0px -4px 10px 0px rgb(0 0 0 / 51%);}
+.desiner{text-align: center;padding: 20px;}
+.desiner h2,.desiner h3, .desiner-h3{display: inline-block;font-size: 20px;color: #fff;font-weight: 600;}
+.desiner-h3:hover{color: #ffb100;}
+.desiner p{font-size: 15px;color: #fff;font-weight: 400;}
+
 .header{
-    background: radial-gradient(#ffffff, #aaaaaa);
+    background: #ffffff;
+    box-shadow: 0px 4px 4px -4px rgb(0 0 0 / 51%);
+    height: 70px;
+    position: sticky;
+    top: 0;
+    z-index: 70;
+    display: block;
 }
 .navbar{
     display: flex;
     align-items: center;
-    padding: 20px;
+    padding: 5px;
+    height: 100%;
 }
 nav{
     text-align: right;
@@ -27,6 +40,18 @@ nav ul li{
     padding: 5px 10px;
     margin: 5px;
     cursor: pointer;
+    position: relative;
+}
+.main{padding-bottom: 50px;flex-grow: 1}
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1300px;
+    margin: 0 auto;
+    margin-top: 16px;
+    margin-bottom: 16px;
 }
 div{clear: both;}
 a{
@@ -45,16 +70,9 @@ p{
     max-width: 1300px;
     margin: auto;
     padding: 0 25px;
+    height: 100%;
 }
-.row{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    max-width: 1300px;
-    margin: 0 auto;
-    margin-top: 50px;
-}
+.col{margin-top: 16px;display: flex;width: 48%;}
 .col-1{
     flex-basis: 50%;
     min-width: 300px;
@@ -64,12 +82,17 @@ p{
     float: left;
 }
 .col-1 h1{
-    font-size: 50px;
+    font-size: 20px;
     margin: 0 20px;
     color: #333333;
+    max-height: 60px;
+    overflow: hidden;
 }
 .col-1 p{
     margin: 0 20px;
+    font-size: 12px;
+    max-height: 90px;
+    overflow: hidden;
 }
 .btn{
     display: inline-block;
@@ -90,16 +113,18 @@ p{
     content:'\22D9';
     float: right;
 }
-.logo{width: 250px;height: auto;}
-.logo img{width: 100%;height: auto;}
-.cart-nm{padding: 2px 5px; background: #c23232; border-radius: 20px; border: 1px solid #a01515; font-size: 10px; color: #fff; display: flex; position: absolute; left: 10px; bottom: 10px;}
+.col-1 .btn{padding: 5px 10px;}
+.logo{width: 250px;height: 50px;}
+.logo img{width: 100%;height: 100%;}
+.cart-nm{padding: 0 6px;background: #333333;border-radius: 20px;border: 1px solid #000000;color: #fff;
+    display: block;
+    position: absolute;
+    right: -3px;
+    top: -3px;
+    font-size: 12px;}
 /* ---- Login Form --- */
 .login-box{
     background: linear-gradient(45deg, white, #b1680e26);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     border-top: 3px solid #ffb100;
     border-bottom: 3px solid #ffb100;
     padding: 30px;
@@ -113,14 +138,15 @@ p{
     position: relative;
     margin-bottom: 20px;
 }
-.form-in input{border: none;outline: none;background: none;width: 100%;height: 100%;padding-top: 20px;color: #555555;}
+.form-in input,.form-in textarea,.form-in select{border: none;outline: none;background: none;width: 100%;height: 100%;padding-top: 10px;color: #555555;font-size: 15px;}
 .form-in label{position: absolute;bottom: 0;left: 0;width: 100%;height: 100%;pointer-events: none;border-bottom: 1px solid #333333;}
 .form-in label::after{content: '';position: absolute;bottom: -1px;left: 0;;width: 100%;height: 100%;border-bottom: 3px solid #ffb100;
     transform: translateX(-100%);
     transition: all 0.3s ease;
 }
 .content-dt{position: absolute;bottom: 5px;left: 0px;transition: all 0.3s ease;}
-.form-in input:focus + .label-name .content-dt, .form-in input:valid + .label-name .content-dt {
+.form-in.date input + .label-name .content-dt {color: #555555;transform: translateY(-100%);font-size: 12px;}
+.form-in input:focus + .label-name .content-dt, .form-in input:valid + .label-name .content-dt,.form-in.date input:valid + .label-name .content-dt {
     transform: translateY(-100%);
     font-size: 12px;
     color: #ffb100;
